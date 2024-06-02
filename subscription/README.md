@@ -1,3 +1,4 @@
+
 ![image](https://github.com/jomertix/marzban-tools/assets/150632538/5866c40e-cf64-472b-b492-416e53d92f2d)
 
 
@@ -9,9 +10,16 @@ Minimalistic subscription page
 # Installation
 
 Connect to the server and upload the file:
+
+Russian version:
 ```
-sudo wget -N -P /var/lib/marzban/templates/subscription/ https://raw.githubusercontent.com/jomertix/marzban-tools/master/subscription/index.html
+sudo wget -c https://raw.githubusercontent.com/jomertix/marzban-tools/master/subscription/index.html -o /var/lib/marzban/templates/subscription/index.html
 ```
+English version:
+```
+sudo wget -c https://raw.githubusercontent.com/jomertix/marzban-tools/master/subscription/index-en.html -o /var/lib/marzban/templates/subscription/index.html
+```
+
 Enter these commands to automatically specify the file path to the subscription page:
 ```
 echo 'CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"' | sudo tee -a /opt/marzban/.env
