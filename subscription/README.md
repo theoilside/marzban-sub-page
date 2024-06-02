@@ -13,11 +13,11 @@ Connect to the server and upload the file:
 
 Russian version:
 ```
-sudo wget -O /var/lib/marzban/templates/subscription/index.html https://github.com/jomertix/marzban-tools/blob/master/subscription/index.html
+sudo wget -O /var/lib/marzban/templates/subscription/index.html https://raw.githubusercontent.com/jomertix/marzban-tools/master/subscription/index.html
 ```
 English version:
 ```
-sudo wget -O /var/lib/marzban/templates/subscription/index.html https://github.com/jomertix/marzban-tools/blob/master/subscription/index-en.html
+sudo wget -O /var/lib/marzban/templates/subscription/index.html https://raw.githubusercontent.com/jomertix/marzban-tools/master/subscription/index-en.html
 ```
 
 Enter these commands to automatically specify the file path to the subscription page:
