@@ -258,12 +258,11 @@
 				<div class="accordion accordion-flush" id="accordionHelp">
 
 					<div class="accordion-item">
-					    <h2 class="accordion-header" id="flush-heading-help-1">
-					    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-help-1" aria-expanded="false" aria-controls="flush-collapse-help-1">Ключи</button>
-					    </h2>
+					    <h2 class="accordion-header">Ключи</h2>
 						<ul>
 							{% for link in user.links %}
 							<li>
+								{extractNameFromConfigURL({{link}})} 
 								<input type="text" value="{{ link }}" readonly>
 								<button class="copy-button" onclick="copyToClipboard('{{ link }}')">Copy</button>
 								<button class="qr-button" data-link="{{ link }}">QR Code</button>
@@ -512,6 +511,22 @@
 	</style>
 
 	<script type="text/javascript">
+		function extractNameFromConfigURL(url) {
+            const namePattern = /#([^#]*)/;
+            const match = url.match(namePattern);
+
+            if (match) {
+                const name = decodeURIComponent(match[1]);
+                return name;
+            } else if (url.startsWith("vmess://")) {
+                const encodedString = url.replace("vmess://", "");
+                const decodedString = atob(encodedString);
+                return JSON.parse(decodedString).ps
+            }
+            else {
+                return null;
+            }
+        }
 
 		function showNotification(notificationElementId) {
 		  	let notification = document.getElementById(notificationElementId)
