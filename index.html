@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Основная информация о подписке и способах подключения">
-	<link rel="icon" type="image/x-icon" href="https://google.com/pic.png">
-	<title></title>
+	<link rel="icon" type="image/x-icon" href="https://i.imgur.com/jMyALRx.png">
+	<title>ВПН от @theoilside</title>
 
 	<!-- Set the theme at the very beginning, so as not to scare a user with a white screen while loading the page on slow devices -->
 	<script type="text/javascript">
@@ -46,7 +46,7 @@
 	<main>
 		<div class="modules">
 			<div class="module subscription">
-				<h3 class="module-title">ВПН от @theoilside</h3>
+				<h3 class="module-title">ВПН от @theoilside для {{ user.username }}</h3>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						Статус<span>{% if user.status.value =='active' %}<div class="dot dot-green"></div>Активен{% elif user.status.value == 'limited' %}<div class="dot dot-yellow"></div>Ограничен{% elif user.status.value == 'expired' %}<div class="dot dot-red"></div>Истёк{% else %}<div class="dot dot-red"></div>Заблокирован{% endif %}</span>	
@@ -443,7 +443,7 @@
 		}
 
 		[data-bs-theme=dark] *,
-		[data-bs-theme=dark] .subscription .list-group-item span, 
+		[data-bs-theme=dark] .subscription .list-group-item span
 		{
 		    background-color: #181818;
 		}
