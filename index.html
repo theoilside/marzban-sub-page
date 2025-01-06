@@ -262,7 +262,7 @@
 						<ul>
 							{% for link in user.links %}
 							<li>
-								{extractNameFromConfigURL({{link}})} 
+								${ extractNameFromConfigURL(link) }
 								<input type="text" value="{{ link }}" readonly>
 								<button class="copy-button" onclick="copyToClipboard('{{ link }}')">Copy</button>
 								<button class="qr-button" data-link="{{ link }}">QR Code</button>
