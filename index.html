@@ -36,6 +36,11 @@
         let expireDateVar = expireDateInit.includes("∞") ? "∞" : new Date(expireDateInit).toLocaleString("ru-RU").replace(",", "")
 	</script>
 
+	<script type="text/javascript">
+		const userLinks = {{ user | tojson }};
+		console.log("user.links:", userLinks);
+	</script>
+
 </head>
 <body>
 
@@ -511,6 +516,7 @@
 	</style>
 
 	<script type="text/javascript">
+
 		function extractNameFromConfigURL(url) {
             const namePattern = /#([^#]*)/;
             const match = url.match(namePattern);
