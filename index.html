@@ -262,7 +262,7 @@
 						<ul>
 							{% for link in user.links %}
 							<li>
-								${ extractNameFromConfigURL(link) }
+								<p data-config-url="{{ link }}">{{ link }}</p>
 								<input type="text" value="{{ link }}" readonly>
 								<button class="copy-button" onclick="copyToClipboard('{{ link }}')">Copy</button>
 								<button class="qr-button" data-link="{{ link }}">QR Code</button>
@@ -527,6 +527,16 @@
                 return null;
             }
         }
+
+		document.addEventListener("DOMContentLoaded", function () {
+        const listItems = document.querySelectorAll("p[data-config-url]");
+
+        listItems.forEach((item) => {
+            const configURL = item.getAttribute("data-config-url");
+            const extractedName = extractNameFromConfigURL(configURL);
+            item.textContent = extractedName;
+        });
+    	});
 
 		function showNotification(notificationElementId) {
 		  	let notification = document.getElementById(notificationElementId)
