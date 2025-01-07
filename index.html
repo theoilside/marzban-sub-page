@@ -35,12 +35,6 @@
         const expireDateInit = "{% if not user.expire %}∞{% else %}{% set current_timestamp = now().timestamp() %}{{ user.expire | datetime }}{% endif %}";
         let expireDateVar = expireDateInit.includes("∞") ? "∞" : new Date(expireDateInit).toLocaleString("ru-RU").replace(",", "")
 	</script>
-
-	<script type="text/javascript">
-		const userLinks = {{ user }};
-		console.log("user:", userLinks);
-	</script>
-
 </head>
 <body>
 
@@ -323,6 +317,13 @@
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			console.log("getting username...")
+			console.log("username:", {{ user.username }});
+			console.log("getting user...")
+			console.log("user:", {{ user }});
+		</script>
 	</body>
 
 	<style>
